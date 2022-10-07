@@ -11,34 +11,35 @@ body {
 
 .container {
     max-width: 125rem;
-    margin:4rem auto;
-    padding:1rem;
+    margin: 4rem auto;
+    padding: 2rem;
 }
 
 .container img {
-    display:block;
-    width:100%;
-    margin-bottom:2rem;
-    box-shadow:0 0 .5rem rgba(0,0,0,.24);
-    background:#ccc;
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .24);
+    background: #ccc;
 }
 
 @media (min-width: 800px) {
     .container {
         column-count: 3;
         column-gap: 2rem;
+        column-fill: balance;
     }
 }
 
 @media (max-width: 800px) {
 
     .heading-text {
-        font-size:3.8rem;
+        font-size: 3.8rem;
     }
 
     .container img {
         max-width: 35rem;
-        margin:2rem auto;
+        margin: 2rem auto;
     }
 
 }

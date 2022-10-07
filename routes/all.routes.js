@@ -18,5 +18,9 @@ router.get('/work/scg', (req,res) => {
     res.render('solution_consulting_group.ejs');
 });
 
+router.get('/work/freelance_internship', (req,res) => { 
+    res.render('freelance_internship.ejs');
+});
+
 
 export default router;
