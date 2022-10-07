@@ -39,4 +39,8 @@ body {
         padding: 0 2rem;
     }
 
+    .profile-img {
+        margin:0 auto;
+    }
+
 }
