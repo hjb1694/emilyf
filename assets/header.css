@@ -49,6 +49,16 @@
         border-top: 1px solid #000;
         border-bottom: 1px solid #000;
         padding: 1rem;
+        justify-content:center;
+    }
+
+    .logo-link {
+        width:28rem;
+        margin:0 auto;
+    }
+
+    .logo-link img {
+        width:28rem;
     }
 
 }
