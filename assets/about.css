@@ -6,11 +6,13 @@ body {
     display:grid;
     grid-template-columns:repeat(2,1fr);
     padding:2rem 3rem;
+    max-width:130rem;
+    margin:0 auto;
 }
 
 .profile-img{
     display:block;
-    margin:6rem auto;
+    margin:6rem auto 0 4rem;
     box-shadow:0 0 .5rem rgba(0,0,0,.24);
 }
 
@@ -35,13 +37,6 @@ body {
     .container {
         display: block;
         padding: 0 2rem;
-    }
-
-    .nav {
-        margin:2rem 0;
-        border-top:1px solid #000;
-        border-bottom:1px solid #000;
-        padding:1rem;
     }
 
 }
