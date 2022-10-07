@@ -19,12 +19,14 @@ body {
 .heading-text{
     font-family:'chewie-regular', sans-serif;
     font-size:4.5rem;
+    user-select:none;
 }
 
 .text-content {
     margin-top:4rem;
     font-family: 'poppins-regular', sans-serif;
     font-size: 1.6rem;
+    user-select:none;
 }
 
 .text-content p {
