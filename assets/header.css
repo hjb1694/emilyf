@@ -4,3 +4,36 @@
     justify-content: space-between;
     padding:2rem 4rem;
 }
+
+.logo-link{
+    display:block;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+}
+
+.nav__item{
+    display:block;
+    font-family: 'poppins-light', sans-serif;
+    text-decoration:none;
+    font-size:1.8rem;
+    text-transform:uppercase;
+    font-weight:300;
+    transition:transform .3s;
+}
+
+.nav__item:link,
+.nav__item:visited {
+    text-decoration: none;
+    color: #262626;
+}
+
+.nav__item:hover {
+    transform:scale(1.05);
+}
+
+.nav__item:not(:last-child) {
+    margin-right: 3rem;
+}

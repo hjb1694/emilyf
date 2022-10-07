@@ -1,0 +1,15 @@
+.footer {
+    padding:2rem 3rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link{
+    display:block;
+    text-decoration: none;
+}
+
+.footer-link:not(:last-child){
+    margin-right:2rem;
+}

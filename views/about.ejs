@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <%- include('./partials/head.partial.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/about.css">
     <link rel="stylesheet" type="text/css" href="/header.css">
+    <link rel="stylesheet" type="text/css" href="/footer.css">
     <title>Emily Fitzpatrick</title>
 </head>
 <body>
    <%- include('./partials/header.partial.ejs') %>
+   <div class="container">
+        <div class="one">
+            <img class="profile-img" src="/img/emily_profile_img.png" alt="Emily Fitzpatrick">
+        </div>
+        <div class="two">
+            <h1 class="heading-text">I am a web and graphic designer.</h1>
+            <div class="text-content">
+                <p>I am a web and graphic designer with 4 years of professional experience. In 2018, I receieved my Bachelors of Arts in Design from Maryville College in Maryville, Tennessee. </p>
+
+                <p>I have worked mostly with small marketing agencies creating branding and websites for both large and small local businesses. I also have freelance experience. My expertise is web design, and enjoy improving and refreshing a brand’s website. </p>
+
+                <p>I currently live in Oak Ridge, Tennessee, and in my free time I enjoy hand embroidery, hiking, baking homemade bread, and going to local concerts. </p>
+            </div>
+        </div>
+   </div>
+   <%- include('./partials/footer.partial.ejs') %>
 </body>

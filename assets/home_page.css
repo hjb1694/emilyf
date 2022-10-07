@@ -55,6 +55,7 @@
 .nav__item:link, 
 .nav__item:visited {
     text-decoration: none;
+    color: #262626;
 }
 
 .nav__item:not(:last-child){

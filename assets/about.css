@@ -1,0 +1,30 @@
+body {
+    background: #E5E5E5;
+}
+
+.container {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    padding:2rem 3rem;
+}
+
+.profile-img{
+    display:block;
+    margin:6rem auto;
+    box-shadow:0 0 .5rem rgba(0,0,0,.24);
+}
+
+.heading-text{
+    font-family:'chewie-regular', sans-serif;
+    font-size:4.5rem;
+}
+
+.text-content {
+    margin-top:4rem;
+    font-family: 'poppins-regular', sans-serif;
+    font-size: 1.6rem;
+}
+
+.text-content p {
+    margin-bottom:2rem;
+}
