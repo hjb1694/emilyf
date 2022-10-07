@@ -34,6 +34,10 @@ body {
 
 @media (max-width: 800px) {
 
+    .heading-text{
+        text-align:center;
+    }
+
     .container {
         display: block;
         padding: 0 2rem;
