@@ -14,5 +14,9 @@ router.get('/work', (req,res) => {
     res.render('work.ejs');
 });
 
+router.get('/work/scg', (req,res) => { 
+    res.render('solution_consulting_group.ejs');
+});
+
 
 export default router;
