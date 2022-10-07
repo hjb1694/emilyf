@@ -1,0 +1,67 @@
+.container {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    height:100%;
+}
+
+.content{
+    background:#E5E5E5;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image{
+    background: url(/img/computer_vase.png) center / cover;
+}
+
+.super-text{
+    font-family: 'Poppins', sans-serif;
+    font-size:1.6rem;
+    text-transform: uppercase;
+    font-weight:300;
+    letter-spacing:2px;
+    color:#262626;
+    user-select: none;
+}
+
+.main-text {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 7rem;
+    color:#000807;
+    font-weight:400;
+    text-align:center;
+    margin:2rem 0;
+    user-select: none;
+}
+
+.nav {
+    display:flex;
+    align-items:center;
+}
+
+.nav__item{
+    display:block;
+    font-family: 'Poppins', sans-serif;
+    font-size:1.6rem;
+    text-transform: uppercase;
+    font-weight:300;
+    letter-spacing: 2px;
+    color: #262626;
+    transition:transform .2s;
+    user-select: none;
+}
+
+.nav__item:link, 
+.nav__item:visited {
+    text-decoration: none;
+}
+
+.nav__item:not(:last-child){
+    margin-right:5rem;
+}
+
+.nav__item:hover{
+    transform:scale(1.05);
+}
