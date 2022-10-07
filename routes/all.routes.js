@@ -10,5 +10,9 @@ router.get('/about', (req, res) => {
     res.render('about.ejs');
 });
 
+router.get('/work', (req,res) => { 
+    res.render('work.ejs');
+});
+
 
 export default router;

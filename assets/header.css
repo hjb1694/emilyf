@@ -37,3 +37,18 @@
 .nav__item:not(:last-child) {
     margin-right: 3rem;
 }
+
+@media (max-width: 800px) {
+    .header {
+        display:block;
+        padding:2rem;
+    }
+
+    .nav {
+        margin: 2rem 0;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 1rem;
+    }
+
+}

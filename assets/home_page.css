@@ -65,3 +65,34 @@
 .nav__item:hover{
     transform:scale(1.05);
 }
+
+@media (max-width: 800px) {
+    .container {
+        display:block;
+    }
+
+    .content{
+        padding:2rem;
+        height:50vh;
+    }
+
+    .bg-image{
+        height:50vh;
+    }
+
+    .super-text{
+        font-size: 1.4rem;
+    }
+
+    .main-text{
+        font-size:5.5rem;
+    }
+
+    .nav__item{
+        font-size:1.4rem;
+    }
+
+    .nav__item:not(:last-child) {
+        margin-right: 3rem;
+    }
+}
