@@ -1,0 +1,13 @@
+{
+  "name": "emilyf",
+  "version": "0.0.0",
+  "description": "Portfolio website for Emily Fitzpatrick",
+  "main": "app.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hayden Bradfield",
+  "license": "ISC"
+}
