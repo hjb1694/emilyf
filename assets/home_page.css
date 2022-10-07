@@ -17,20 +17,19 @@
 }
 
 .super-text{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'poppins-light', sans-serif;
     font-size:1.6rem;
     text-transform: uppercase;
-    font-weight:300;
     letter-spacing:2px;
     color:#262626;
+    font-weight:300;
     user-select: none;
 }
 
 .main-text {
-    font-family: 'Tiro Bangla', serif;
+    font-family: 'chewie-regular', serif;
     font-size: 7rem;
     color:#000807;
-    font-weight:400;
     text-align:center;
     margin:2rem 0;
     user-select: none;
@@ -43,7 +42,7 @@
 
 .nav__item{
     display:block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'poppins-light', sans-serif;
     font-size:1.6rem;
     text-transform: uppercase;
     font-weight:300;

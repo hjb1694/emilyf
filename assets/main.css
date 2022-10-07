@@ -1,3 +1,40 @@
+@font-face {
+    font-family: 'poppins-light';
+    src: url('/fonts/poppins-light-webfont.woff2') format('woff2'),
+        url('/fonts/poppins-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'poppins-regular';
+    src: url('/fonts/poppins-regular-webfont.woff2') format('woff2'),
+        url('/fonts/poppins-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'chewie-light';
+    src: url('/fonts/chewie-light-webfont.woff2') format('woff2'),
+        url('/fonts/chewie-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'chewie-regular';
+    src: url('/fonts/chewie-regular-webfont.woff2') format('woff2'),
+        url('/fonts/chewie-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 *, *::after {
     margin:0;
     padding:0;
