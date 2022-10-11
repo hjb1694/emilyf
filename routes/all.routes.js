@@ -22,5 +22,9 @@ router.get('/work/freelance_internship', (req,res) => {
     res.render('freelance_internship.ejs');
 });
 
+router.get('/contact', (req,res) => { 
+    res.render('contact.ejs');
+});
+
 
 export default router;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.partial.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/header.css">
+    <link rel="stylesheet" type="text/css" href="/contact.css">
+    <title>Emily Fitzpatrick</title>
+</head>
+<body>
+    <%- include('./partials/header.partial.ejs') %>
+    <h1 class="heading-text">Contact Me</h1>
+    <div class="container">
+        <form action="">
+            <div class="top-inputs">
+                <div class="fgrp">
+                    <label class="label" for="name">Name</label>
+                    <input class="text-input" type="text" name="" id="name"/>
+                </div>
+                <div class="fgrp">
+                    <label class="label" for="name">Email</label>
+                    <input class="text-input" type="email" name="" id="email"/>
+                </div>
+            </div>
+            <div class="fgrp">
+                <label class="label" for="message">Message</label>
+                <textarea class="textarea" id="message"></textarea>
+            </div>
+            <button class="subbut" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
