@@ -42,13 +42,13 @@ router.post('/auth', notAuth, async (req, res) => {
         const creds = await AuthQueries.getCredentialsByUsername(username);
 
         if (!creds) { 
-            throw new Error();
+            throw new Error('no matching users with username.');
         }
 
         const matches = await bcrypt.compare(password, creds.password);
 
         if (!matches) { 
-            throw new Error();
+            throw new Error('password mismatch.');
         }
 
         req.session.isLoggedIn = true;
@@ -57,6 +57,7 @@ router.post('/auth', notAuth, async (req, res) => {
 
         
     } catch (e) { 
+        console.error(e);
         res.status(500).json({
             body: 'unsuccessful login'
         });

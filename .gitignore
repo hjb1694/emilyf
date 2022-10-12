@@ -1,2 +1,4 @@
 .env 
 /node_modules
+/database/dev.sqlite3
+/database/prod.sqlite3
