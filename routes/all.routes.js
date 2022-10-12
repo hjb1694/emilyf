@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import notAuth from '../middleware/notAuth.js';
 
 const router = Router();
 
@@ -24,6 +25,10 @@ router.get('/work/freelance_internship', (req,res) => {
 
 router.get('/contact', (req,res) => { 
     res.render('contact.ejs');
+});
+
+router.get('/auth', notAuth, (req,res) => { 
+    res.render('auth.ejs');
 });
 
 

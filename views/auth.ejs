@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/auth.css">
+</head>
+<body>
+    <form class="auth-form">
+        <img class="logo" src="/img/EF_logo.png" alt="logo" />
+        <div class="fgrp">
+            <label for="username" class="label">Username</label>
+            <input type="text" class="text-input" id="username" />
+        </div>
+        <div class="fgrp">
+            <label for="password" class="label">Password</label>
+            <input type="password" class="text-input" id="password" />
+        </div>
+        <button class="subbut" type="submit">Login</button>
+        <ul class="errbox">
+            <!-- errors go here -->
+        </ul>
+    </form>
+    <script type="application/javascript">
+        const authForm = document.querySelector('.auth-form');
+        const subbut = document.querySelector('.subbut');
+        const errbox = document.querySelector('.errbox');
+        const fields = {
+            username: document.querySelector('#username'), 
+            password: document.querySelector('#password')
+        }
+
+        function validate() {
+            errbox.innerHTML = '';
+            const errors = [];
+
+            if(![...fields.username.value].length){
+                errors.push('Please enter a username.');
+            }
+
+            if(![...fields.password.value].length){
+                errors.push('Please enter a password.');
+            }
+
+            if(errors.length){
+                for(let error of errors){
+                    errbox.insertAdjacentHTML('beforeend', `<li>${error}</li>`);
+                }
+            }
+
+            return !!errors.length
+        }
+
+        function login(e) {
+            e.preventDefault();
+
+            if(validate()) return;
+
+            subbut.textContent = 'Processing...'
+            subbut.disabled = true;
+
+            fetch('/auth', {
+                method: 'POST', 
+                headers: {
+                    'content-type': 'application/json'
+                }, 
+                body: JSON.stringify({
+                    username: fields.username.value, 
+                    password: fields.username.value
+                })
+            })
+            .then(resp => {
+                if(!resp.ok){
+                    throw new Error('unsuccessful');
+                }
+            })
+            .catch(e => {
+                errbox.insertAdjacentHTML('<li>Login unsuccessful.</li>');
+            })
+            .finally(
+                () => {
+                    subbut.textContent = 'Login';
+                    subbut.disabled = false;
+                }
+            );
+        }
+
+        authForm.addEventListener('submit', login);
+
+    </script>
+</body>
+</html>
