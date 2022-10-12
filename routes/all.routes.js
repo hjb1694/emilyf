@@ -3,6 +3,9 @@ import notAuth from '../middleware/notAuth.js';
 import AuthQueries from '../database/queries/auth.queries.js';
 import bcrypt from 'bcryptjs';
 import isAuth from '../middleware/isAuth.js';
+import validateContactForm from '../middleware/validateContactForm.js';
+import sanitizeContactFormFields from '../middleware/sanitizeContactFormFields.js';
+import FormQueries from '../database/queries/formQueries.queries.js';
 
 const router = Router();
 
@@ -28,6 +31,28 @@ router.get('/work/freelance_internship', (req,res) => {
 
 router.get('/contact', (req,res) => { 
     res.render('contact.ejs');
+});
+
+router.post('/contact', validateContactForm, sanitizeContactFormFields, (req,res) => { 
+
+    try { 
+        const { name, email, message } = req.body;
+
+        await FormQueries.insertContactInquiry(name, email, message);
+
+        res.status(201).json({
+            body: 'success!'
+        });
+
+    }
+    catch (e) {
+        console.error(e);
+        res.status(500).json({
+            body: 'failed!'
+        });
+    }
+
+
 });
 
 router.get('/auth', notAuth, (req,res) => { 

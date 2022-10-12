@@ -18,7 +18,9 @@
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "knex": "^2.3.0",
-    "sqlite3": "^5.1.2"
+    "sanitize-html": "^2.7.2",
+    "sqlite3": "^5.1.2",
+    "string-length": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

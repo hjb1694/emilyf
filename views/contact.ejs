@@ -95,6 +95,34 @@
             subbut.disabled = true;
             subbut.innerHTML = 'Submitting...';
 
+            fetch('/contact', {
+                method: 'POST', 
+                headers: {
+                    'content-type': 'application/json'
+                }, 
+                body: JSON.stringify({
+                    name: inputs.name.value, 
+                    email: inputs.email.value, 
+                    message: inputs.message.value
+                })
+            })
+            .then(resp => {
+                if(!resp.ok){
+                    throw new Error();
+                }
+                inputs.name.value = '';
+                inputs.email.value = '';
+                inputs.message.value = '';
+                window.alert('Submiited sucessfully!');
+            })
+            .catch(e => {
+                window.alert('Unable to submit contact inquiry.');
+            })
+            .finally(() => {
+                subbut.disabled = false;
+                subbut.textContent = 'Submit';
+            });
+
         }
 
         contactForm.addEventListener('submit', submit)
