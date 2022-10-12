@@ -23,7 +23,7 @@ export default (req, res, next) => {
         stringLength(name) > 60
     ) errorCount++;
 
-    if(!regs.email.test(inputs.email.value)) errorCount++;     
+    if(!regs.email.test(email)) errorCount++;     
 
     if(
         stringLength(sanitizeString(message)) < 10 ||
