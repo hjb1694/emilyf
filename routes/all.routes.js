@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import notAuth from '../middleware/notAuth.js';
+import AuthQueries from '../database/queries/auth.queries.js';
+import bcrypt from 'bcryptjs';
 
 const router = Router();
 
@@ -30,6 +32,36 @@ router.get('/contact', (req,res) => {
 router.get('/auth', notAuth, (req,res) => { 
     res.render('auth.ejs');
 });
+
+router.post('/auth', notAuth, async (req, res) => { 
+    
+    try {
+        
+        const { username, password } = req.body;
+
+        const creds = await AuthQueries.getCredentialsByUsername(username);
+
+        if (!creds) { 
+            throw new Error();
+        }
+
+        const matches = await bcrypt.compare(password, creds.password);
+
+        if (!matches) { 
+            throw new Error();
+        }
+
+        req.session.isLoggedIn = true;
+
+        res.status(200).json({body: 'success!'});
+
+        
+    } catch (e) { 
+        res.status(500).json({
+            body: 'unsuccessful login'
+        });
+    }
+})
 
 
 export default router;
