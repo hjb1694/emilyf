@@ -11,24 +11,93 @@
     <%- include('./partials/header.partial.ejs') %>
     <h1 class="heading-text">Contact Me</h1>
     <div class="container">
-        <form action="">
+        <form class="contact-form">
             <div class="top-inputs">
                 <div class="fgrp">
                     <label class="label" for="name">Name</label>
                     <input class="text-input" type="text" name="" id="name"/>
+                    <div class="errbox errbox--name"></div>
                 </div>
                 <div class="fgrp">
                     <label class="label" for="name">Email</label>
                     <input class="text-input" type="email" name="" id="email"/>
+                    <div class="errbox errbox--email"></div>
                 </div>
             </div>
             <div class="fgrp">
                 <label class="label" for="message">Message</label>
                 <textarea class="textarea" id="message"></textarea>
+                <div class="errbox errbox--message"></div>
             </div>
             <button class="subbut" type="submit">Submit</button>
         </form>
     </div>
     <%- include('./partials/footer.partial.ejs') %>
+    <script type="application/javascript">
+        const contactForm = document.querySelector('.contact-form');
+        const subbut = document.querySelector('.subbut');
+        const inputs = {
+            name: document.querySelector('#name'), 
+            email: document.querySelector('#email'), 
+            message: document.querySelector('#message')
+        }
+        const errorBoxes = {
+            name: document.querySelector('.errbox--name'), 
+            email: document.querySelector('.errbox--email'), 
+            message: document.querySelector('.errbox--message')
+        }
+
+        const regs = {
+            name: /^[a-z ,.'-]+$/i, 
+            email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i
+        }
+
+
+        function validate(){
+
+            let errorCount = 0;
+
+            if(!regs.name.test(inputs.name.value)){
+                errorCount++;
+                errorBoxes.name.textContent = 'Please enter a valid first and last name.';
+            }
+
+            if(!regs.email.test(inputs.email.value)){
+                errorCount++;
+                errorBoxes.email.textContent = 'Please enter a valid email address.';
+            }
+
+            if(
+                [...inputs.message.value].length < 10 ||
+                [...inputs.message.value].length > 3000
+            ){
+                errorCount++;
+                errorBoxes.message.textContent = 'Message must be between 10 and 3000 characters.'
+            }
+
+            return !!errorCount;
+
+        }
+
+        function clearErrorBoxes(){
+            for(let field in errorBoxes){
+                errorBoxes[field].textContent = '';
+            }
+        }
+
+        function submit(e){
+            e.preventDefault();
+
+            clearErrorBoxes();
+
+            if(validate()) return;
+
+            subbut.disabled = true;
+            subbut.innerHTML = 'Submitting...';
+
+        }
+
+        contactForm.addEventListener('submit', submit)
+    </script>
 </body>
 </html>

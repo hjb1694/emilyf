@@ -67,6 +67,14 @@ body {
     letter-spacing: 1px;
 }
 
+.errbox{
+    margin-top:.5rem;
+    font-size:1.4rem;
+    color:#f00;
+    font-weight:bold;
+    font-family:'poppins-regular', sans-serif;
+}
+
 
 @media (max-width:800px) {
     .top-inputs{
