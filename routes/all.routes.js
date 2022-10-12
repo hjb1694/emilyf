@@ -2,6 +2,7 @@ import { Router } from 'express';
 import notAuth from '../middleware/notAuth.js';
 import AuthQueries from '../database/queries/auth.queries.js';
 import bcrypt from 'bcryptjs';
+import isAuth from '../middleware/isAuth.js';
 
 const router = Router();
 
@@ -33,7 +34,7 @@ router.get('/auth', notAuth, (req,res) => {
     res.render('auth.ejs');
 });
 
-router.post('/auth', notAuth, async (req, res) => { 
+router.post('/auth', notAuth, async (req, res) => {
     
     try {
         
@@ -41,27 +42,31 @@ router.post('/auth', notAuth, async (req, res) => {
 
         const creds = await AuthQueries.getCredentialsByUsername(username);
 
-        if (!creds) { 
+        if (!creds) {
             throw new Error('no matching users with username.');
         }
 
         const matches = await bcrypt.compare(password, creds.password);
 
-        if (!matches) { 
+        if (!matches) {
             throw new Error('password mismatch.');
         }
 
         req.session.isLoggedIn = true;
 
-        res.status(200).json({body: 'success!'});
+        res.status(200).json({ body: 'success!' });
 
         
-    } catch (e) { 
+    } catch (e) {
         console.error(e);
         res.status(500).json({
             body: 'unsuccessful login'
         });
     }
+});
+
+router.get('/admin', isAuth, (req,res) => {
+    res.render('admin.ejs');
 })
 
 
