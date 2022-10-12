@@ -5,13 +5,14 @@
     <link rel="stylesheet" type="text/css" href="/work.css">
     <link rel="stylesheet" type="text/css" href="/header.css">
     <link rel="stylesheet" type="text/css" href="/footer.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Emily Fitzpatrick</title>
 </head>
 <body>
     <%- include('./partials/header.partial.ejs') %>
     <h1 class="heading-text">My Work</h1>
     <div class="showcase">
-        <a href="/work/freelance_internship" class="tile">
+        <a href="/work/freelance_internship" class="tile" data-aos="zoom-in">
             <div class="tile__img-container">
                 <img  class="tile__img" src="/img/Elicia_Ferrer_1.png" alt="Elicia Ferrer">
             </div>
@@ -19,7 +20,7 @@
                 Freelance &amp; Internship Work
             </h2>
         </a>
-        <a href="#" class="tile">
+        <a href="#" class="tile" data-aos="zoom-in">
             <div class="tile__img-container">
                 <img  class="tile__img" src="/img/agency_1.png" alt="Agency Work">
             </div>
@@ -27,7 +28,7 @@
                 Agency Work
             </h2>
         </a>
-        <a href="/work/scg" class="tile">
+        <a href="/work/scg" class="tile" data-aos="zoom-in">
             <div class="tile__img-container">
                 <img  class="tile__img" src="/img/businesscards_1.png" alt="Agency Work">
             </div>
@@ -35,7 +36,7 @@
                 Solution Consulting Group
             </h2>
         </a>
-        <a href="#" class="tile">
+        <a href="#" class="tile" data-aos="zoom-in">
             <div class="tile__img-container">
                 <img  class="tile__img" src="/img/en_1.png" alt="Agency Work">
             </div>
@@ -45,4 +46,8 @@
         </a>
     </div>
     <%- include('./partials/footer.partial.ejs') %>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="application/javascript">
+        AOS.init();
+    </script>
 </body>
