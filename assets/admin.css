@@ -1,0 +1,125 @@
+body {
+    background:#f5eee6;
+    font-family: 'poppins-regular', sans-serif;
+}
+
+.header {
+    background:#333;
+    height:5rem;
+    padding:1rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    color:#fff;
+}
+
+.admin-logo {
+    font-size:2.4rem;
+}
+
+.logout-button:link, 
+.logout-button:visited {
+    text-decoration: none;
+    display:block;
+    padding:.5rem 1rem;
+    background:transparent;
+    border:1px solid #fff;
+    color:#fff;
+    border-radius:3px;
+    font-size:1.4rem;
+}
+
+.container {
+    max-width: 75rem;
+    margin:2rem auto;
+    padding:1rem;
+}
+
+.toggle-buttons {
+    display:flex;
+}
+
+.toggle-buttons button {
+    background:#fff;
+    padding:1rem;
+    border:1px solid #ccc;
+    display:block;
+    font-family:inherit;
+}
+
+.toggle-buttons button:first-child {
+    border-radius:5px 0 0 0;
+}
+
+.toggle-buttons button:last-child {
+    border-radius:0 5px 0 0;
+}
+
+.pane {
+    height:70vh;
+    overflow:auto;
+    background:#fff;
+    border: 1px solid #ccc;
+    border-radius:0 5px 5px 5px;
+    padding:1rem;
+}
+
+table {
+    width:100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    font-size:1.4rem;
+}
+
+table th, 
+table td {
+    border:1px solid #ccc;
+    padding:.5rem;
+}
+
+table th {
+    background:#eee;
+    text-transform: uppercase;
+}
+
+table button {
+    white-space: nowrap;
+}
+
+.message-modal {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+}
+
+.message-modal__backdrop{
+    background:rgba(0,0,0,.7);
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.message-modal__main {
+    width:50rem;
+    padding:1rem;
+    background:#fff;
+    z-index:1000;
+}
+
+.message-modal.show{
+    display:flex;
+}
+
+.message-modal__content{
+    white-space: pre-wrap;
+    font-size:1.4rem;
+}
+

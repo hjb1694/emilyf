@@ -17,4 +17,22 @@ export default class FormQueries {
 
     }
 
+    static async fetchContactInquiries() { 
+ 
+        try {
+
+            const results = await knex.from('contact_inquiries').select([
+                'name', 'email', 'message'
+            ]);
+
+            return results;
+
+
+        } catch (e) {
+            throw new Error('Db Select Error.');
+         }
+
+
+    }
+
 }

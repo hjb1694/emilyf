@@ -5,8 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/admin.css" />
 </head>
 <body>
-    Admin
+    <header class="header">
+        <h1 class="admin-logo">Admin</h1>
+        <a class="logout-button" href="/logout">Logout</a>
+    </header>
+    <div class="container">
+        <div class="toggle-buttons">
+            <button class="contact-toggle">Contact Inquiries</button>
+        </div>
+        <section class="contact-pane pane">
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </thead>
+                <tbody>
+                    <% for(let row of contactInquiries) { %>
+                    <tr>
+                        <td><%= row.name %></td>
+                        <td><%= row.email %></td>
+                        <td>
+                            <button class="show-message-button" data-message="<%= row.message %>">View Message</button>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </section>
+        <div class="message-modal">
+            <div class="message-modal__backdrop"></div>
+            <div class="message-modal__main">
+                <div class="message-modal__content">
+
+
+                </div>
+                <button class="message-modal__close-button">Close</button>
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        const showMessageButtons = document.querySelectorAll('.show-message-button');
+        const messageModal = document.querySelector('.message-modal');
+        const messageModalContent = document.querySelector('.message-modal__content');
+        const messageModalCloseButton = document.querySelector('.message-modal__close-button');
+        const messageModalBackdrop = document.querySelector('.message-modal__backdrop');
+
+        showMessageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                messageModalContent.textContent = button.getAttribute('data-message');
+                messageModal.classList.add('show');
+            });
+        });
+
+        function hideModal(){
+            messageModal.classList.remove('show');
+            messageModalContent.textContent = '';
+        }
+
+        messageModalCloseButton.addEventListener('click', hideModal);
+        messageModalBackdrop.addEventListener('click', hideModal);
+    </script>
 </body>
 </html>

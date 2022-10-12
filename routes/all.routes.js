@@ -90,8 +90,20 @@ router.post('/auth', notAuth, async (req, res) => {
     }
 });
 
-router.get('/admin', isAuth, (req,res) => {
-    res.render('admin.ejs');
+router.get('/admin', isAuth, async (req, res) => {
+    
+    const contactInquiries = await FormQueries.fetchContactInquiries();
+
+    console.log(contactInquiries);
+
+    res.render('admin.ejs', {
+        contactInquiries
+    });
+})
+
+router.get('/logout', (req, res) => { 
+    req.session.destroy();
+    res.redirect('/auth');
 })
 
 
