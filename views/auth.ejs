@@ -76,6 +76,8 @@
                 if(!resp.ok){
                     throw new Error('unsuccessful');
                 }
+
+                window.location.replace('/admin');
             })
             .catch(e => {
                 errbox.insertAdjacentHTML('beforeend','<li>Login unsuccessful.</li>');
