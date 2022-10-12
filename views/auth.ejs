@@ -78,7 +78,7 @@
                 }
             })
             .catch(e => {
-                errbox.insertAdjacentHTML('<li>Login unsuccessful.</li>');
+                errbox.insertAdjacentHTML('beforeend','<li>Login unsuccessful.</li>');
             })
             .finally(
                 () => {
