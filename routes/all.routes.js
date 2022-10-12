@@ -33,7 +33,7 @@ router.get('/contact', (req,res) => {
     res.render('contact.ejs');
 });
 
-router.post('/contact', validateContactForm, sanitizeContactFormFields, (req,res) => { 
+router.post('/contact', validateContactForm, sanitizeContactFormFields, async (req,res) => { 
 
     try { 
         const { name, email, message } = req.body;
