@@ -15,7 +15,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-app.use(compression());
+//app.use(compression());
 app.set('view-engine', 'ejs');
 app.set('views', './views');
 
